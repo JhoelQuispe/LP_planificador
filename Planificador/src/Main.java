@@ -20,7 +20,6 @@ public class Main {
 		}
 		//// Agregacion de datos
 		for(int j = 0 ; j < archivos.length ; j++){
-			System.out.println(archivos[j]);
 			File f = new File(archivos[j]);
 			BufferedReader entrada;
 			try {
@@ -28,7 +27,6 @@ public class Main {
 				String linea;
 				while(entrada.ready()){
 					linea = entrada.readLine();
-					System.out.println(linea);
 					String nameday = linea.substring(0,3);
 					int index = list_days.indexOf(nameday);
 //					System.out.println("index "+index);
@@ -39,11 +37,10 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Termino la insercion de datos");
-//		for(int i = 0 ; i < dias.length ; i++){
-//			week[i].Find_Intersections();
-//		}
-		week[0].Find_Intersections();
+		for(int i = 0 ; i < dias.length ; i++){
+			System.out.print(dias[i]+" ");
+			week[i].Pre_Find_Intersections(45);
+		}
 	}
 
 

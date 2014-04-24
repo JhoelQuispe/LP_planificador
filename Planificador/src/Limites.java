@@ -21,7 +21,6 @@ public class Limites {
 			}
 			else	fecha2 = time;
 		}
-		System.out.println(fecha1+" "+fecha2);
 			
 	}
 	
