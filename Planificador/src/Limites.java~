@@ -4,8 +4,8 @@ import java.util.Date;
 
 
 public class Limites {
-	public int fecha1; //fecha inicio
-	public int fecha2; //fecha fin
+	public int fecha1;
+	public int fecha2;
 	
 	public Limites(String raw) {
 		// TODO Auto-generated constructor stub

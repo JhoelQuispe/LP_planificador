@@ -29,22 +29,14 @@ public class Dias {
 			if(intervalos.get(0).get(0).fecha1 < intervalos.get(1).get(0).fecha1){
 				v1 = intervalos.get(0);
 				v2 = intervalos.get(1);
-				
-			
-	//			Vector<Limites> a = intervalos.get(i);
-	//			Vector<Limites> b = intervalos.get(i+1);
-				
-			
 			}
 			else {
 				v2 = intervalos.get(0);
 				v1 = intervalos.get(1);
-				
 			}
-			
 			Find_Intersectoins(v1, v2, time );
-			System.out.println();
 		}
+		System.out.println();
 		
 	}
 	
@@ -71,47 +63,24 @@ public class Dias {
 			if (t1.fecha1 < t2.fecha2){
 				if(t1.fecha1 > t2.fecha1){
 					if(t1.fecha2 < t2.fecha2){
-						if(t1.fecha2 - t1.fecha1 >= time ){
-							TransfDate(t1.fecha1);
-							System.out.print("-");
-							TransfDate(t1.fecha2);
-							System.out.print(" ");
-						}
+						Transf_datos(t1.fecha1, t1.fecha2, time);
 						i++;
 					}
 					else{
-						if(t2.fecha2 - t1.fecha1 >= time ){
-							TransfDate(t1.fecha1);
-							System.out.print("-");
-							TransfDate(t2.fecha2);
-							System.out.print(" ");
-							
-						}
+						Transf_datos(t1.fecha1, t2.fecha2, time);
 						j++;
 					}
 				}
 				else{
-					if(t1.fecha2 < t2.fecha1){
+					if(t1.fecha2 < t2.fecha1)
 						i++;
-					}
 					else{
 						if(t1.fecha2 < t2.fecha2){
-							if(t1.fecha2 - t2.fecha1 >= time){
-								TransfDate(t2.fecha1);
-								System.out.print("-");
-								TransfDate(t1.fecha2);
-								System.out.print(" ");
-								
-							}
+							Transf_datos(t2.fecha1, t1.fecha2, time);
 							i++;
 						}
 						else{
-							if(t2.fecha2 - t2.fecha1 >= time){
-								TransfDate(t2.fecha1);
-								System.out.print("-");
-								TransfDate(t2.fecha2);
-								System.out.print(" ");
-							}
+							Transf_datos(t2.fecha1, t2.fecha2, time);
 							j++;
 						}
 					}
@@ -123,11 +92,12 @@ public class Dias {
 		}
 	}
 	
-	
-		
-	
-		// TODO Auto-generated constructor stub
-	
-	
-	
+	public void Transf_datos(int t1, int t2, int time){
+		if(t2-t1 >=time){
+			TransfDate(t1);
+			System.out.print("-");
+			TransfDate(t2);
+			System.out.print(" ");
+		}
+	}
 }
